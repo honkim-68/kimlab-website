@@ -1,0 +1,183 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Research" description="Research projects in the Kim Lab - Ion channels, BK channels, and alcohol toxicity">
+
+  <section class="page-header">
+    <div class="container">
+      <h1>Research</h1>
+      <p>Our laboratory focuses on understanding the molecular mechanisms of neuronal function using <em>C. elegans</em></p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <article class="research-project">
+        <h2>Project 1: Ion Channel Localization at Synapses</h2>
+
+        <p>
+          We investigate how ion channels are transported to and cluster at specific cellular
+          locations, with particular emphasis on <strong>CaV2 voltage-gated calcium channels</strong>.
+          These channels play a critical role in synaptic transmission by mediating calcium influx
+          that triggers neurotransmitter release.
+        </p>
+
+        <h3>UNC-2/CaV2 Channel Studies</h3>
+        <p>
+          We study the UNC-2 channel, the <em>C. elegans</em> ortholog of mammalian CaV2 channels.
+          UNC-2 is responsible for presynaptic calcium influx, which triggers the fusion of
+          neurotransmitter-filled synaptic vesicles with the plasma membrane.
+        </p>
+
+        <div class="highlight">
+          <p>
+            <strong>Key Findings:</strong> We have identified RIM/UNC-10 and Liprin-alpha/SYD-2
+            proteins as key players in positioning CaV2 channels at the active zone, revealing
+            a conserved mechanism for channel localization at synapses.
+          </p>
+        </div>
+
+        <h3>Research Questions</h3>
+        <ul>
+          <li>How are voltage-gated calcium channels transported to presynaptic terminals?</li>
+          <li>What molecular mechanisms anchor channels at the active zone?</li>
+          <li>How does channel positioning affect synaptic transmission efficiency?</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <article class="research-project">
+        <h2>Project 2: BK Channel Function and Alcohol Response</h2>
+
+        <p>
+          Our laboratory examines the <strong>SLO-1 calcium-activated potassium (BK) channel</strong>
+          and its relationship to alcohol intoxication and tolerance. BK channels are large-conductance
+          potassium channels that are activated by both membrane depolarization and intracellular calcium.
+        </p>
+
+        <h3>Alcohol Sensitivity Studies</h3>
+        <p>
+          We discovered that loss-of-function mutations in <em>slo-1</em> cause strong resistance
+          to the intoxicating effects of alcohol. This finding established a direct link between
+          BK channel function and alcohol's behavioral effects.
+        </p>
+
+        <div class="highlight">
+          <p>
+            <strong>Key Findings:</strong> Proper clustering of BK channels at presynaptic terminals
+            is essential for acute alcohol effects. Disruption of channel localization mimics the
+            alcohol-resistant phenotype of channel mutants.
+          </p>
+        </div>
+
+        <h3>Research Questions</h3>
+        <ul>
+          <li>How does alcohol interact with BK channels to modulate neuronal activity?</li>
+          <li>What mechanisms control BK channel localization in neurons?</li>
+          <li>Can targeting channel trafficking provide new approaches to treating alcohol disorders?</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <article class="research-project">
+        <h2>Project 3: Chronic Alcohol Effects and Mitochondrial Protection</h2>
+
+        <p>
+          This research addresses <strong>alcohol-related neurological disorders</strong> including
+          myopathy, neuropathy, and neurodegeneration. These conditions represent significant
+          clinical challenges, and understanding their molecular basis is essential for developing
+          effective treatments.
+        </p>
+
+        <h3>Mitochondria as Alcohol's Target</h3>
+        <p>
+          We identified mitochondria as alcohol's primary cellular target for chronic toxicity.
+          Our work demonstrates that alcohol exposure leads to mitochondrial stress and dysfunction,
+          which underlies many of the pathological effects of chronic alcohol consumption.
+        </p>
+
+        <div class="highlight">
+          <p>
+            <strong>Key Findings:</strong> Elevated mitochondrial stress responses allow organisms
+            to maintain normal function after prolonged alcohol exposure. This protective mechanism
+            represents a potential therapeutic target for alcohol-related disorders.
+          </p>
+        </div>
+
+        <h3>Research Questions</h3>
+        <ul>
+          <li>What are the molecular mechanisms of alcohol-induced mitochondrial damage?</li>
+          <li>How do cells adapt to chronic alcohol exposure?</li>
+          <li>Can enhancing mitochondrial stress responses protect against alcohol toxicity?</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Techniques and Approaches</h2>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Genetics</h3>
+          <p>Forward and reverse genetic screens, CRISPR/Cas9 genome editing, transgenic analysis</p>
+        </div>
+        <div class="card">
+          <h3>Imaging</h3>
+          <p>Confocal microscopy, live imaging of fluorescent reporters, calcium imaging</p>
+        </div>
+        <div class="card">
+          <h3>Behavioral Analysis</h3>
+          <p>Automated tracking systems, locomotion analysis, drug response assays</p>
+        </div>
+        <div class="card">
+          <h3>Molecular Biology</h3>
+          <p>Protein localization studies, biochemistry, gene expression analysis</p>
+        </div>
+        <div class="card">
+          <h3>Electrophysiology</h3>
+          <p>Patch-clamp recordings, neuromuscular junction analysis</p>
+        </div>
+        <div class="card">
+          <h3>Genomics</h3>
+          <p>RNA-seq, whole-genome sequencing, bioinformatics analysis</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+  }
+
+  .page-header h1 {
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+
+  .page-header p {
+    opacity: 0.9;
+    margin: 0;
+  }
+
+  .research-project {
+    max-width: 800px;
+  }
+
+  .research-project h3 {
+    margin-top: 1.5rem;
+  }
+</style>

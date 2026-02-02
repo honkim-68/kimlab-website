@@ -1,0 +1,175 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Home" description="Kim Lab at Rosalind Franklin University - Research on ion channels, neuronal function, and alcohol toxicity using C. elegans">
+
+  <section class="hero">
+    <div class="container">
+      <h1>Welcome to the Kim Lab</h1>
+      <p class="hero-subtitle">Investigating the molecular mechanisms of neuronal function and disease</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>About Our Research</h2>
+      <p>
+        Our laboratory uses <em>Caenorhabditis elegans</em> as a model organism to investigate genes
+        essential for movement control. Through genetic and genomic approaches, we aim to understand
+        the mechanisms underlying neurological and neuromuscular diseases.
+      </p>
+
+      <div class="highlight">
+        <p>
+          <strong>Our Mission:</strong> To advance understanding of ion channel function, synaptic
+          transmission, and the molecular basis of alcohol-related disorders through innovative
+          research using <em>C. elegans</em> as a powerful genetic model system.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Research Focus Areas</h2>
+
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Ion Channel Localization</h3>
+          <p>
+            We investigate how ion channels are transported to and cluster at specific cellular
+            locations, with particular emphasis on CaV2 voltage-gated calcium channels and their
+            role in synaptic transmission.
+          </p>
+          <a href="/kimlab-website/research/" class="btn">Learn More</a>
+        </div>
+
+        <div class="card">
+          <h3>BK Channel Function</h3>
+          <p>
+            Our work examines the SLO-1 calcium-activated potassium channel's relationship to
+            alcohol intoxication and tolerance, revealing how channel clustering affects acute
+            alcohol responses.
+          </p>
+          <a href="/kimlab-website/research/" class="btn">Learn More</a>
+        </div>
+
+        <div class="card">
+          <h3>Alcohol Toxicity</h3>
+          <p>
+            We study the chronic effects of alcohol on neurological function, with a focus on
+            mitochondria as the primary cellular target and protective stress response mechanisms.
+          </p>
+          <a href="/kimlab-website/research/" class="btn">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Why <em>C. elegans</em>?</h2>
+      <div class="grid grid-2">
+        <div>
+          <p>
+            <em>Caenorhabditis elegans</em> is a powerful model organism for studying the nervous
+            system. With only 302 neurons and a completely mapped connectome, it provides an
+            unparalleled opportunity to understand neural circuits at the cellular and molecular level.
+          </p>
+          <p>
+            The genetic tools available in <em>C. elegans</em> allow us to precisely manipulate
+            gene function and observe the effects on behavior, providing direct insights into
+            the mechanisms of neurological diseases.
+          </p>
+        </div>
+        <div class="model-features">
+          <ul>
+            <li><strong>302 neurons</strong> with fully mapped connections</li>
+            <li><strong>Transparent body</strong> for live imaging</li>
+            <li><strong>Short generation time</strong> (3 days)</li>
+            <li><strong>Powerful genetics</strong> for gene manipulation</li>
+            <li><strong>Conserved genes</strong> relevant to human disease</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-section">
+    <div class="container">
+      <h2>Join Our Team</h2>
+      <p>
+        We are always looking for motivated students and researchers interested in neuroscience,
+        genetics, and cell biology.
+      </p>
+      <a href="/kimlab-website/contact/" class="btn">Contact Us</a>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero {
+    background: url('/kimlab-website/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 8rem 0;
+    text-align: center;
+  }
+
+  .hero h1 {
+    color: #1a202c;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin: 0 auto;
+    color: #2d3748;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+  }
+
+  .model-features {
+    background-color: var(--bg-alt);
+    padding: 1.5rem;
+    border-radius: 8px;
+  }
+
+  .model-features ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .model-features li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .model-features li:last-child {
+    border-bottom: none;
+  }
+
+  .cta-section {
+    text-align: center;
+    background: linear-gradient(135deg, var(--bg-alt) 0%, #e2e8f0 100%);
+  }
+
+  .cta-section h2 {
+    border-bottom: none;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+    }
+  }
+</style>

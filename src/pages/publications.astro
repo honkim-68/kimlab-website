@@ -1,0 +1,524 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const publications = [
+  {
+    year: 2024,
+    authors: "Xiong A, Richmond JE, Kim H",
+    title: "Presynaptic neurons self-tune by inversely coupling neurotransmitter release with the abundance of CaV2 voltage-gated Ca2+ channels",
+    journal: "PNAS",
+    doi: "10.1073/pnas.2404969121",
+    highlight: true
+  },
+  {
+    year: 2023,
+    authors: "Oh KH, Xiong A, Choe JY, Richmond JE, Kim H",
+    title: "Active zone trafficking of CaV2/UNC-2 channels is independent of β/CCB-1 and α2δ/UNC-36 subunits",
+    journal: "Journal of Neuroscience",
+    doi: "10.1523/jneurosci.2264-22.2023",
+    highlight: true
+  },
+  {
+    year: 2023,
+    authors: "Krout MD, Oh KH, Xiong A, Frankel EB, Kurshan PT, Kim H, Richmond JE",
+    title: "Clarinet/CLA-1 recruits RIMB-1/RIM-binding protein and UNC-13 to orchestrate presynaptic neurotransmitter release",
+    journal: "Proc Natl Acad Sci USA",
+    volume: "23",
+    pages: "e2220856120",
+    doi: "10.1073/pnas.2220856120",
+    highlight: false
+  },
+  {
+    year: 2021,
+    authors: "Oh KH, Krout M, Richmond JE, Kim H",
+    title: "UNC-2 CaV2 channel localization at presynaptic active zones depends on UNC-10/RIM and SYD-2/Liprin-α in Caenorhabditis elegans",
+    journal: "Journal of Neuroscience",
+    pmid: "33975919",
+    highlight: true
+  },
+  {
+    year: 2020,
+    authors: "Cheung TP, Choe JY, Richmond JE, Kim H",
+    title: "BK channel density is regulated by endoplasmic reticulum associated degradation and influenced by the SKN-1A/NRF1 transcription factor",
+    journal: "PLoS Genetics",
+    volume: "16(6)",
+    pages: "e1008829",
+    doi: "10.1371/journal.pgen.1008829",
+    highlight: false
+  },
+  {
+    year: 2020,
+    authors: "Oh KH, Sheoran S, Richmond JE, Kim H",
+    title: "Alcohol induces mitochondrial fragmentation and stress responses to maintain normal muscle function in Caenorhabditis elegans",
+    journal: "FASEB Journal",
+    volume: "34(6)",
+    pages: "8204-8216",
+    doi: "10.1096/fj.201903166R",
+    highlight: false
+  },
+  {
+    year: 2019,
+    authors: "Oh KH, Kim H",
+    title: "BK channel clustering is required for normal behavioral alcohol sensitivity in C. elegans",
+    journal: "Scientific Reports",
+    volume: "9(1)",
+    pages: "10224",
+    doi: "10.1038/s41598-019-46615-9",
+    highlight: false
+  },
+  {
+    year: 2017,
+    authors: "Oh KH, Kim H",
+    title: "Aldicarb-induced Paralysis Assay to Determine Defects in Synaptic Transmission in Caenorhabditis elegans",
+    journal: "Bio Protocol",
+    volume: "7(14)",
+    pmid: "28868330",
+    highlight: false
+  },
+  {
+    year: 2017,
+    authors: "Oh KH, Haney J, Wang X, Chuang CF, Richmond J, Kim H",
+    title: "ERG-28 controls BK channel trafficking in the ER to regulate synaptic function and alcohol response in C. elegans",
+    journal: "eLife",
+    volume: "6",
+    pages: "e24733",
+    doi: "10.7554/eLife.24733",
+    highlight: true
+  },
+  {
+    year: 2016,
+    authors: "Li H, Kim H, Furst J, Raicu D",
+    title: "A run-length encoding approach for path similarity analysis of C. elegans search behavior",
+    journal: "Computational and Mathematical Methods in Medicine",
+    volume: "2016",
+    pages: "3516089",
+    pmid: "27462364",
+    highlight: false
+  },
+  {
+    year: 2016,
+    authors: "Kim H, Oh K",
+    title: "Protein network interacting with BK channel",
+    journal: "International Review of Neurobiology",
+    volume: "128",
+    pages: "127-61",
+    pmid: "27238263",
+    highlight: false
+  },
+  {
+    year: 2015,
+    authors: "Moy K, Li W, Tran HP, Simonis V, Story E, Brandon C, Furst J, Raicu D, Kim H",
+    title: "Computational Methods for Tracking, Quantitative Assessment, and Visualization of C. elegans Locomotory Behavior",
+    journal: "PLoS One",
+    volume: "10(12)",
+    pages: "e0145870",
+    doi: "10.1371/journal.pone.0145870",
+    highlight: false
+  },
+  {
+    year: 2015,
+    authors: "Truong T, Karlinski ZA, O'Hara C, Cabe M, Kim H, Bakowska JC",
+    title: "Oxidative Stress in Caenorhabditis elegans: Protective Effects of Spartin",
+    journal: "PLoS One",
+    volume: "10(6)",
+    pages: "e0130455",
+    pmid: "26114733",
+    highlight: false
+  },
+  {
+    year: 2015,
+    authors: "Oh KH, Abraham L, Gegg C, Silvestri C, Huang YC, Alkema M, Furst J, Raicu D, Kim H",
+    title: "Presynaptic BK channel localization is dependent on the hierarchical organization of alpha-catulin and dystrobrevin and fine-tuned by CaV2 calcium channels",
+    journal: "BMC Neuroscience",
+    volume: "16",
+    pages: "26",
+    doi: "10.1186/s12868-015-0166-2",
+    highlight: false
+  },
+  {
+    year: 2013,
+    authors: "Oh KH, Kim H",
+    title: "IGF signaling in muscle degenerative diseases",
+    journal: "Aging",
+    volume: "5(12)",
+    pages: "865-6",
+    pmid: "24334588",
+    highlight: false
+  },
+  {
+    year: 2013,
+    authors: "Oh KH, Kim H",
+    title: "Reduced IGF signaling prevents muscle cell death in a Caenorhabditis elegans model of muscular dystrophy",
+    journal: "Proc Natl Acad Sci USA",
+    volume: "110(47)",
+    pages: "19024-9",
+    doi: "10.1073/pnas.1308866110",
+    highlight: false
+  },
+  {
+    year: 2013,
+    authors: "Metzler R, Meleshkevitch EA, Fox J, Kim H, Boudko DY",
+    title: "A SLC6 transporter of the novel B0,- system aids in absorption and detection of nutrient amino acids in Caenorhabditis elegans",
+    journal: "Journal of Experimental Biology",
+    volume: "216(15)",
+    pages: "2843-57",
+    doi: "10.1242/jeb.081497",
+    highlight: false
+  },
+  {
+    year: 2012,
+    authors: "Oh HJ, Abraham LS, van Hengel J, Stove C, Bhattacharya TJ, Bhattacharya M, Bhattacharya S, van Roy F, Kim H",
+    title: "The interaction of alpha-catulin with dystrobrevin contributes to the integrity of the dystrophin complex in muscle",
+    journal: "Journal of Biological Chemistry",
+    volume: "287",
+    pages: "21717-21728",
+    doi: "10.1074/jbc.M111.313775",
+    highlight: false
+  },
+  {
+    year: 2011,
+    authors: "Sancar F, Bhattacharya TJ, Bhattacharya S, Bhattacharya S, Bhattacharya S, Bhattacharya S, Kim H, Zhen M, Richmond JE",
+    title: "The dystrophin-associated protein complex maintains muscle excitability by regulating BK channel localization",
+    journal: "Journal of Biological Chemistry",
+    volume: "286(38)",
+    pages: "33501-33510",
+    doi: "10.1074/jbc.M111.227868",
+    highlight: false
+  },
+  {
+    year: 2010,
+    authors: "Abraham LS, Oh HJ, Sancar F, Richmond JE, Kim H",
+    title: "An alpha-catulin homologue controls neuromuscular function through localization of the dystrophin complex and BK channels in Caenorhabditis elegans",
+    journal: "PLoS Genetics",
+    volume: "6(8)",
+    pages: "e1001077",
+    doi: "10.1371/journal.pgen.1001077",
+    highlight: false
+  },
+  {
+    year: 2009,
+    authors: "Kim H, Pierce-Shimomura JT, Oh HJ, Johnson BE, Goodman MB, McIntire SM",
+    title: "The dystrophin complex controls BK channel localization and muscle activity in Caenorhabditis elegans",
+    journal: "PLoS Genetics",
+    volume: "5(12)",
+    pages: "e1000780",
+    doi: "10.1371/journal.pgen.1000780",
+    highlight: true
+  },
+  {
+    year: 2004,
+    authors: "Kim H, Rogers MJ, Richmond JE, McIntire SM",
+    title: "SNF-6 is an acetylcholine transporter interacting with the dystrophin complex in Caenorhabditis elegans",
+    journal: "Nature",
+    volume: "430",
+    pages: "891-896",
+    pmid: "15318222",
+    highlight: true
+  },
+  {
+    year: 2003,
+    authors: "Davies AG, Pierce-Shimomura JT, Kim H, VanHoven MK, Thiele TR, Bonci A, Bargmann CI, McIntire SM",
+    title: "A central role of BK channel in behavioral responses to ethanol in C. elegans",
+    journal: "Cell",
+    volume: "115",
+    pages: "655-666",
+    pmid: "14675531",
+    highlight: true
+  },
+  {
+    year: 1999,
+    authors: "Kim H, Baumann H",
+    title: "Dual signaling role of protein tyrosine phosphatase SHP-2 in regulating expression of acute phase plasma proteins by IL-6 type cytokine receptors in hepatic cells",
+    journal: "Molecular and Cellular Biology",
+    volume: "19",
+    pages: "5326-5338",
+    pmid: "10409724",
+    highlight: false
+  },
+  {
+    year: 1999,
+    authors: "Lai CF, Ripperger J, Wang Y, Kim H, Hawley RB, Baumann H",
+    title: "The STAT3-independent signaling pathway by glycoprotein 130 in hepatic cells",
+    journal: "Journal of Biological Chemistry",
+    volume: "274",
+    pages: "7793-802",
+    pmid: "10075671",
+    highlight: false
+  },
+  {
+    year: 1998,
+    authors: "Lim SK, Kim H, Lim SK, bin Ali A, Lim YK, Wang Y, Chong SM, Costantini F, Baumann H",
+    title: "Increased susceptibility in Hp knockout mice during acute hemolysis",
+    journal: "Blood",
+    volume: "92",
+    pages: "1870-1877",
+    pmid: "9731043",
+    highlight: false
+  },
+  {
+    year: 1998,
+    authors: "Kim H, Hawley T, Hawley R, Baumann H",
+    title: "Protein tyrosine phosphatase (SHP-2) moderates signaling by gp130 but is not required for the induction of acute-phase plasma protein genes in hepatic cells",
+    journal: "Molecular and Cellular Biology",
+    volume: "18",
+    pages: "1525-1533",
+    pmid: "9488469",
+    highlight: false
+  },
+  {
+    year: 1997,
+    authors: "Kim H, Baumann H",
+    title: "Transmembrane domain of gp130 contributes to intracellular signal transduction in hepatic cells",
+    journal: "Journal of Biological Chemistry",
+    volume: "272",
+    pages: "30741-30747",
+    pmid: "9388212",
+    highlight: false
+  },
+  {
+    year: 1997,
+    authors: "Kim H, Baumann H",
+    title: "The carboxyl-terminal region of STAT3 controls gene induction by the mouse haptoglobin promoter",
+    journal: "Journal of Biological Chemistry",
+    volume: "272",
+    pages: "14571-14579",
+    pmid: "9169415",
+    highlight: false
+  },
+  {
+    year: 1996,
+    authors: "Baumann H, Morella KK, White DW, Dembski M, Bailon PS, Kim H, Lai CF, Tartaglia LA",
+    title: "The full-length leptin receptor has signaling capabilities of interleukin 6-type cytokine receptors",
+    journal: "Proc Natl Acad Sci USA",
+    volume: "93",
+    pages: "8374-8378",
+    pmid: "8710878",
+    highlight: false
+  },
+  {
+    year: 1995,
+    authors: "Kim H, Lee HS, Chang KT, Ko TH, Baek KJ, Kwon NS",
+    title: "Chloromethyl ketones block induction of nitric oxide synthase in murine macrophages by preventing activation of nuclear factor-kappa B",
+    journal: "Journal of Immunology",
+    volume: "154",
+    pages: "4741-4748",
+    pmid: "7536778",
+    highlight: false
+  }
+];
+
+// Group publications by year
+const pubsByYear = publications.reduce((acc, pub) => {
+  if (!acc[pub.year]) acc[pub.year] = [];
+  acc[pub.year].push(pub);
+  return acc;
+}, {} as Record<number, typeof publications>);
+
+const years = Object.keys(pubsByYear).sort((a, b) => Number(b) - Number(a));
+---
+
+<Layout title="Publications" description="Publications from the Kim Lab at Rosalind Franklin University">
+
+  <section class="page-header">
+    <div class="container">
+      <h1>Publications</h1>
+      <p>Our peer-reviewed research publications</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="pub-links">
+        <p>
+          <strong>External Links:</strong>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/?term=Kim+H+AND+elegans" target="_blank" rel="noopener">PubMed</a> |
+          <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" rel="noopener">Google Scholar</a>
+        </p>
+      </div>
+
+      {publications.length > 0 ? (
+        years.map((year) => (
+          <div class="year-section">
+            <h2>{year}</h2>
+            <ul class="pub-list">
+              {pubsByYear[Number(year)].map((pub) => (
+                <li class:list={['pub-item', { highlight: pub.highlight }]}>
+                  <p class="pub-authors">{pub.authors}</p>
+                  <p class="pub-title">{pub.title}</p>
+                  <p class="pub-journal">
+                    <em>{pub.journal}</em>
+                    {pub.volume && ` ${pub.volume}`}
+                    {pub.pages && `: ${pub.pages}`}
+                  </p>
+                  <p class="pub-links">
+                    {pub.doi && (
+                      <a href={`https://doi.org/${pub.doi}`} target="_blank" rel="noopener">DOI</a>
+                    )}
+                    {pub.pmid && (
+                      <a href={`https://pubmed.ncbi.nlm.nih.gov/${pub.pmid}/`} target="_blank" rel="noopener">PubMed</a>
+                    )}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      ) : (
+        <div class="placeholder-content">
+          <h2>Selected Publications</h2>
+          <p class="note">
+            Publications will be listed here. To add your publications, edit the
+            <code>publications</code> array in <code>src/pages/publications.astro</code>.
+          </p>
+
+          <div class="highlight">
+            <h3>Publication Format Example:</h3>
+            <div class="pub-item example">
+              <p class="pub-authors">Kim H, Author B, Author C</p>
+              <p class="pub-title">Title of the research paper goes here</p>
+              <p class="pub-journal"><em>Journal of Neuroscience</em> 44: 1234-1245</p>
+              <p class="pub-links">
+                <a href="#">DOI</a>
+                <a href="#">PubMed</a>
+              </p>
+            </div>
+          </div>
+
+          <h3>Quick Links</h3>
+          <p>
+            For a complete list of publications, please visit:
+          </p>
+          <ul>
+            <li>
+              <a href="https://pubmed.ncbi.nlm.nih.gov/?term=Kim+Hongkyun+elegans" target="_blank" rel="noopener">
+                PubMed Search
+              </a>
+            </li>
+            <li>
+              <a href="https://www.rosalindfranklin.edu/academics/faculty/hongkyun-kim/" target="_blank" rel="noopener">
+                Faculty Profile at RFU
+              </a>
+            </li>
+          </ul>
+        </div>
+      )}
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+  }
+
+  .page-header h1 {
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+
+  .page-header p {
+    opacity: 0.9;
+    margin: 0;
+  }
+
+  .pub-links {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: var(--bg-alt);
+    border-radius: 8px;
+  }
+
+  .pub-links p {
+    margin: 0;
+  }
+
+  .pub-links a {
+    margin-left: 0.5rem;
+  }
+
+  .year-section h2 {
+    margin-top: 2rem;
+  }
+
+  .pub-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .pub-item {
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    background: var(--bg-alt);
+    border-radius: 8px;
+    border-left: 4px solid var(--border-color);
+  }
+
+  .pub-item.highlight {
+    border-left-color: var(--accent-color);
+    background: #ebf8ff;
+  }
+
+  .pub-item.example {
+    background: white;
+    border: 1px dashed var(--border-color);
+  }
+
+  .pub-authors {
+    color: var(--text-light);
+    margin-bottom: 0.25rem;
+    font-size: 0.9rem;
+  }
+
+  .pub-title {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.25rem;
+  }
+
+  .pub-journal {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .pub-item .pub-links {
+    background: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .pub-item .pub-links a {
+    display: inline-block;
+    margin-right: 1rem;
+    margin-left: 0;
+    font-size: 0.85rem;
+    padding: 0.25rem 0.75rem;
+    background: var(--accent-color);
+    color: white;
+    border-radius: 4px;
+  }
+
+  .pub-item .pub-links a:hover {
+    background: var(--secondary-color);
+    text-decoration: none;
+  }
+
+  .placeholder-content {
+    max-width: 800px;
+  }
+
+  .note {
+    color: var(--text-light);
+    font-style: italic;
+  }
+
+  code {
+    background: var(--bg-alt);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+  }
+</style>

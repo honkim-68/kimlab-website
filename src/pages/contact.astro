@@ -1,0 +1,211 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact Us" description="Contact the Kim Lab at Rosalind Franklin University">
+
+  <section class="page-header">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p>Get in touch with the Kim Lab</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-2">
+        <div class="contact-info">
+          <h2>Contact Information</h2>
+
+          <div class="contact-card card">
+            <h3>Dr. Hongkyun Kim</h3>
+            <p class="title">Professor</p>
+
+            <div class="contact-detail">
+              <strong>Email:</strong>
+              <a href="mailto:hongkyun.kim@rosalindfranklin.edu">hongkyun.kim@rosalindfranklin.edu</a>
+            </div>
+
+            <div class="contact-detail">
+              <strong>Phone:</strong>
+              <a href="tel:847-578-3442">847-578-3442</a>
+            </div>
+
+            <div class="contact-detail">
+              <strong>Fax:</strong>
+              847-578-3253
+            </div>
+          </div>
+
+          <div class="address-card card">
+            <h3>Lab Location</h3>
+            <p>
+              Innovation and Research Park<br>
+              Room 232<br>
+              Rosalind Franklin University of Medicine and Science<br>
+              3333 Green Bay Road<br>
+              North Chicago, IL 60064
+            </p>
+          </div>
+
+          <div class="department-card card">
+            <h3>Department</h3>
+            <p>
+              Department of Cell Biology and Anatomy<br>
+              Chicago Medical School<br>
+              Rosalind Franklin University of Medicine and Science
+            </p>
+            <p>
+              <a href="https://www.rosalindfranklin.edu/academics/chicago-medical-school/" target="_blank" rel="noopener">
+                Chicago Medical School Website
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <div class="map-section">
+          <h2>Location</h2>
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2953.8892657837847!2d-87.86517492346!3d42.30234577119!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880f9e0b0b0b0b0b%3A0x0!2sRosalind%20Franklin%20University!5e0!3m2!1sen!2sus!4v1600000000000!5m2!1sen!2sus"
+              width="100%"
+              height="300"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Rosalind Franklin University Location">
+            </iframe>
+          </div>
+
+          <div class="directions card">
+            <h3>Directions</h3>
+            <p>
+              The Innovation and Research Park is located on the east side of the
+              Rosalind Franklin University campus.
+            </p>
+            <p>
+              <strong>From Chicago:</strong> Take I-94 West to Route 41 North.
+              Continue to the campus entrance on Green Bay Road.
+            </p>
+            <p>
+              <a href="https://www.google.com/maps/dir//Rosalind+Franklin+University" target="_blank" rel="noopener" class="btn">
+                Get Directions
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Prospective Lab Members</h2>
+
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Graduate Students</h3>
+          <p>
+            We accept graduate students through the
+            <a href="https://www.rosalindfranklin.edu/academics/school-of-graduate-and-postdoctoral-studies/" target="_blank" rel="noopener">
+              School of Graduate and Postdoctoral Studies
+            </a>
+            at Rosalind Franklin University.
+          </p>
+          <p>
+            If you are interested in rotation or thesis research in our lab, please
+            contact Dr. Kim with your CV and research interests.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Postdoctoral Fellows</h3>
+          <p>
+            We are always looking for motivated postdoctoral researchers with
+            backgrounds in neuroscience, genetics, cell biology, or related fields.
+          </p>
+          <p>
+            Please send your CV, a brief statement of research interests, and
+            contact information for three references to Dr. Kim.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Undergraduate Students</h3>
+          <p>
+            We offer research opportunities for undergraduate students interested
+            in gaining laboratory experience. Summer research positions may be available.
+          </p>
+          <p>
+            Contact Dr. Kim to discuss potential projects and availability.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Collaborations</h3>
+          <p>
+            We welcome collaborations with researchers interested in ion channel
+            function, <em>C. elegans</em> genetics, or alcohol toxicity mechanisms.
+          </p>
+          <p>
+            Please reach out to discuss potential collaborative projects.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+  }
+
+  .page-header h1 {
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+
+  .page-header p {
+    opacity: 0.9;
+    margin: 0;
+  }
+
+  .contact-card {
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.25rem;
+  }
+
+  .contact-card .title {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+  }
+
+  .contact-detail {
+    margin-bottom: 0.5rem;
+  }
+
+  .map-container {
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    background: var(--bg-alt);
+  }
+
+  .map-container iframe {
+    display: block;
+  }
+
+  .directions p:last-child {
+    margin-bottom: 0;
+  }
+</style>

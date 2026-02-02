@@ -1,0 +1,287 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const labMembers = [
+  {
+    name: "Hongkyun Kim, PhD",
+    role: "Principal Investigator",
+    title: "Professor",
+    department: "Department of Cell Biology and Anatomy",
+    education: "PhD, Cellular and Molecular Biology, Roswell Park Cancer Institute, SUNY at Buffalo (1999)",
+    bio: "Dr. Kim completed postdoctoral training at the Ernest Gallo Clinic & Research Center, UCSF, where he began genetic studies using C. elegans. He was appointed associate investigator in 2006 before joining Chicago Medical School as an assistant professor in 2008.",
+    email: "hongkyun.kim@rosalindfranklin.edu",
+    image: null
+  },
+  {
+    name: "Kelly Oh, PhD",
+    role: "Research Assistant Professor",
+    title: "Research Assistant Professor",
+    department: "Department of Cell Biology and Anatomy",
+    education: "",
+    bio: "Dr. Oh contributes to research on ion channel function and alcohol toxicity mechanisms in the lab.",
+    email: "",
+    image: null
+  },
+  {
+    name: "Tim Cheung",
+    role: "Graduate/DPM Student",
+    title: "Graduate Student",
+    department: "",
+    education: "",
+    bio: "Tim is pursuing graduate studies while contributing to ongoing research projects in the lab.",
+    email: "",
+    image: null
+  },
+  {
+    name: "Ana Andrea Adam",
+    role: "Research Assistant",
+    title: "Research Assistant",
+    department: "",
+    education: "",
+    bio: "Ana provides essential research support for laboratory experiments and maintenance.",
+    email: "",
+    image: null
+  }
+];
+
+const alumni = [
+  // Add former lab members here
+  // { name: "Name", role: "Former Position", currentPosition: "Current Position" }
+];
+---
+
+<Layout title="People" description="Meet the members of the Kim Lab at Rosalind Franklin University">
+
+  <section class="page-header">
+    <div class="container">
+      <h1>People</h1>
+      <p>Meet our research team</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Principal Investigator</h2>
+
+      {labMembers.filter(m => m.role === "Principal Investigator").map((member) => (
+        <div class="pi-card">
+          <div class="pi-image">
+            {member.image ? (
+              <img src={member.image} alt={member.name} />
+            ) : (
+              <div class="placeholder-image">
+                <span>{member.name.split(' ').map(n => n[0]).join('')}</span>
+              </div>
+            )}
+          </div>
+          <div class="pi-info">
+            <h3>{member.name}</h3>
+            <p class="member-title">{member.title}</p>
+            <p class="member-dept">{member.department}</p>
+            {member.education && <p class="member-edu"><strong>Education:</strong> {member.education}</p>}
+            <p class="member-bio">{member.bio}</p>
+            {member.email && (
+              <p class="member-contact">
+                <a href={`mailto:${member.email}`}>{member.email}</a>
+              </p>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Lab Members</h2>
+
+      <div class="grid grid-3">
+        {labMembers.filter(m => m.role !== "Principal Investigator").map((member) => (
+          <div class="member-card card">
+            <div class="member-image">
+              {member.image ? (
+                <img src={member.image} alt={member.name} />
+              ) : (
+                <div class="placeholder-image small">
+                  <span>{member.name.split(' ').map(n => n[0]).join('')}</span>
+                </div>
+              )}
+            </div>
+            <h3>{member.name}</h3>
+            <p class="member-role">{member.role}</p>
+            {member.bio && <p class="member-bio">{member.bio}</p>}
+            {member.email && (
+              <p class="member-contact">
+                <a href={`mailto:${member.email}`}>{member.email}</a>
+              </p>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {alumni.length > 0 && (
+    <section class="section">
+      <div class="container">
+        <h2>Alumni</h2>
+        <div class="alumni-list">
+          {alumni.map((alum) => (
+            <div class="alumni-item">
+              <strong>{alum.name}</strong> - {alum.role}
+              {alum.currentPosition && <span class="current-position"> → {alum.currentPosition}</span>}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="section">
+    <div class="container">
+      <h2>Join Us</h2>
+      <div class="highlight">
+        <p>
+          We are always looking for motivated graduate students, postdoctoral fellows, and
+          undergraduate researchers interested in neuroscience, genetics, and cell biology.
+        </p>
+        <p>
+          If you are interested in joining the lab, please <a href="/kimlab-website/contact/">contact Dr. Kim</a>
+          with your CV and a brief description of your research interests.
+        </p>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+  }
+
+  .page-header h1 {
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+
+  .page-header p {
+    opacity: 0.9;
+    margin: 0;
+  }
+
+  .pi-card {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 2rem;
+    background: var(--bg-alt);
+    padding: 2rem;
+    border-radius: 8px;
+  }
+
+  .pi-image img,
+  .member-image img {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  .placeholder-image {
+    width: 200px;
+    height: 200px;
+    background: var(--secondary-color);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+  }
+
+  .placeholder-image.small {
+    width: 120px;
+    height: 120px;
+    font-size: 2rem;
+    margin: 0 auto 1rem;
+  }
+
+  .pi-info h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+  }
+
+  .member-title {
+    color: var(--accent-color);
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+  }
+
+  .member-dept {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .member-edu {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .member-bio {
+    margin-bottom: 1rem;
+  }
+
+  .member-card {
+    text-align: center;
+  }
+
+  .member-card h3 {
+    margin-bottom: 0.25rem;
+    font-size: 1.25rem;
+  }
+
+  .member-role {
+    color: var(--accent-color);
+    font-weight: 500;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .member-card .member-bio {
+    font-size: 0.9rem;
+    text-align: left;
+  }
+
+  .alumni-list {
+    background: var(--bg-alt);
+    padding: 1.5rem;
+    border-radius: 8px;
+  }
+
+  .alumni-item {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .alumni-item:last-child {
+    border-bottom: none;
+  }
+
+  .current-position {
+    color: var(--text-light);
+  }
+
+  @media (max-width: 768px) {
+    .pi-card {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .placeholder-image {
+      margin: 0 auto;
+    }
+  }
+</style>
