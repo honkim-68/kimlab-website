@@ -35,10 +35,12 @@ const labMembers = [
 ];
 
 const alumni = [
-  { name: "Kelly Oh, PhD", role: "Research Assistant Professor", currentPosition: "" },
-  { name: "Ame Xiong", role: "Graduate/DPM Student", currentPosition: "" },
-  { name: "Tim Cheung", role: "Graduate/DPM Student", currentPosition: "" },
-  { name: "Ana Andrea Adam", role: "Research Assistant", currentPosition: "" }
+  { name: "Linu Abraham, PhD", role: "Postdoctoral Fellow", subsequentPosition: "AbbVie" },
+  { name: "Kelly Oh, PhD", role: "Research Assistant Professor", subsequentPosition: "Abbott" },
+  { name: "Ame Xiong", role: "Graduate/DPM Student", subsequentPosition: "Clinical Rotations" },
+  { name: "Tim Cheung", role: "Graduate/DPM Student", subsequentPosition: "Yale School of Medicine Resident" },
+  { name: "James Haney", role: "Undergraduate Researcher (Lake Forest College)", subsequentPosition: "Medical Student, University of Illinois at Chicago" },
+  { name: "Ana Andrea Adam", role: "Research Assistant", subsequentPosition: "" }
 ];
 ---
 
@@ -121,7 +123,7 @@ const alumni = [
           {alumni.map((alum) => (
             <div class="alumni-item">
               <strong>{alum.name}</strong> - {alum.role}
-              {alum.currentPosition && <span class="current-position"> → {alum.currentPosition}</span>}
+              {alum.subsequentPosition && <span class="subsequent-position"> → Subsequent Position: {alum.subsequentPosition}</span>}
             </div>
           ))}
         </div>
@@ -262,7 +264,7 @@ const alumni = [
     border-bottom: none;
   }
 
-  .current-position {
+  .subsequent-position {
     color: var(--text-light);
   }
 
