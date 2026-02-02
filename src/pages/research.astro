@@ -5,7 +5,11 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="Research" description="Research projects in the Kim Lab - Ion channels, BK channels, and alcohol toxicity">
 
   <section class="page-header">
-    <div class="container">
+    <video autoplay muted loop playsinline class="video-background">
+      <source src="/kimlab-website/research-video.mp4" type="video/mp4">
+    </video>
+    <div class="header-overlay"></div>
+    <div class="container header-content">
       <h1>Research</h1>
       <p>Our laboratory focuses on understanding the molecular mechanisms of neuronal function using <em>C. elegans</em></p>
     </div>
@@ -157,20 +161,49 @@ import Layout from '../layouts/Layout.astro';
 
 <style>
   .page-header {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    position: relative;
     color: white;
-    padding: 3rem 0;
+    padding: 12rem 0;
     text-align: center;
+    overflow: hidden;
+  }
+
+  .video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    object-fit: cover;
+    object-position: center 70%;
+  }
+
+  .header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(26, 54, 93, 0.7);
+    z-index: -1;
+  }
+
+  .header-content {
+    position: relative;
+    z-index: 1;
   }
 
   .page-header h1 {
     color: white;
     margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   }
 
   .page-header p {
-    opacity: 0.9;
+    opacity: 0.95;
     margin: 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
   }
 
   .research-project {
